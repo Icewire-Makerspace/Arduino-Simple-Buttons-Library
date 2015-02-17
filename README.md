@@ -17,6 +17,8 @@ void simple_interrupt(uint8_t pin, uint8_t trig, volatile void *flag)
 | flag | the variable whose flag should be set to true when the interrupt is triggered |
 
 
+
+
 ```C
 void simple_debounce(uint8_t pin, boolean state)
 ```
