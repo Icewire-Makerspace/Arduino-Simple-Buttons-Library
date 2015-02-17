@@ -64,7 +64,7 @@ void simple_interrupt(uint8_t pin, uint8_t trig, volatile void *flag) {
 	interrupts();
 }
 
-/* Wait until button has settled at the desired state */
+/* Debounce and wait until button has settled at the desired state */
 void simple_debounce(uint8_t pin, boolean state) {
 	delay(DEBOUNCE_MS);
 	while (digitalRead(pin) != state);
