@@ -16,9 +16,9 @@ void simple_interrupt(uint8_t pin, uint8_t trig, volatile void *flag)
 | trig | defines when the interrupt should be triggered (LOW, CHANGE, RISING, or FALLING) |
 | flag | the variable whose flag should be set to true when the interrupt is triggered |
 
-## Examples
+## Example
 
-```
+```C
 #include "simple_interrupts.h"
 
 volatile boolean pressed;
