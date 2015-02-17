@@ -6,9 +6,14 @@
   Pin 3: int_1
 */
 
+enum constants {
+	DEBOUNCE_MS = 20,
+};
+
 volatile boolean *d2flag = false;
 volatile boolean *d3flag = false;
 
+/* Set flag to true when interrupt on external pin is triggered */
 void simple_interrupt(uint8_t pin, uint8_t trig, volatile void *flag) {
 	d2flag = flag;
 
@@ -59,8 +64,9 @@ void simple_interrupt(uint8_t pin, uint8_t trig, volatile void *flag) {
 	interrupts();
 }
 
+/* Wait until button has settled at the desired state */
 void simple_debounce(uint8_t pin, boolean state) {
-	delay(20);
+	delay(DEBOUNCE_MS);
 	while (digitalRead(pin) != state);
 }
 
