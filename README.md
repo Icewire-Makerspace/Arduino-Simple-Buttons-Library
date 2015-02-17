@@ -30,7 +30,7 @@ void simple_debounce(uint8_t pin, boolean state)
 ## Example
 
 ```C
-#include "simple_interrupts.h"
+#include "simple_buttons.h"
 
 volatile boolean pressed;
 
