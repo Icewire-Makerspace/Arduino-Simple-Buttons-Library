@@ -1,4 +1,4 @@
-#include "simple_interrupts.h"
+#include "simple_buttons.h"
 
 /*
   Arduino Uno external interrupts:
