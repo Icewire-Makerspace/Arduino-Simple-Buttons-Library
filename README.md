@@ -16,6 +16,15 @@ void simple_interrupt(uint8_t pin, uint8_t trig, volatile void *flag)
 | trig | defines when the interrupt should be triggered (LOW, CHANGE, RISING, or FALLING) |
 | flag | the variable whose flag should be set to true when the interrupt is triggered |
 
+```C
+void simple_debounce(uint8_t pin, boolean state)
+```
+
+| Parameter | Description |
+| :--- | :--- |
+| pin | the number of pin that the button is connected to (can only be 2 or 3 on Arduino Uno) |
+| state | the boolean state (HIGH or LOW) that the button should be after debouncing |
+
 ## Example
 
 ```C
