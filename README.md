@@ -2,7 +2,16 @@
 
 ## Description
 
-A library for the Arduino Uno to make using external button interrupts and debouncing easier.
+A library for the Arduino Uno to facilitate the use of external buttons.
+
+## Reference
+
+```
+void simple_interrupt(uint8_t pin, uint8_t trig, volatile void *flag)
+pin: the number of pin that the button is connected to (can only be 2 or 3 on Arduino Uno)
+trig: defines when the interrupt should be triggered (LOW, CHANGE, RISING, or FALLING)
+flag: the variable whose flag should be set to true when the interrupt is triggered
+```
 
 ## Examples
 
