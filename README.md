@@ -19,6 +19,16 @@ void simple_interrupt(uint8_t pin, uint8_t trig, volatile void *flag)
 <br>
 
 ```C
+boolean simple_button_press(uint8_t pin)
+```
+
+| Parameter | Description |
+| :--- | :--- |
+| pin | the number of pin that the button is connected to (can only be 2 or 3 on Arduino Uno) |
+
+<br>
+
+```C
 void simple_button_wait(uint8_t pin, boolean state)
 ```
 
@@ -42,10 +52,9 @@ void setup() {
 }
 
 void loop() {
-	if (pressed) {
+	if (simple_button_press(2)) {
 		Serial.println("Button was pressed");
 		simple_button_wait(2, LOW);
-		pressed = false;
 	}
 }
 ```
