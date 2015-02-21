@@ -19,13 +19,13 @@ void simple_interrupt(uint8_t pin, uint8_t trig, volatile void *flag)
 <br>
 
 ```C
-void simple_debounce(uint8_t pin, boolean state)
+void simple_button_wait(uint8_t pin, boolean state)
 ```
 
 | Parameter | Description |
 | :--- | :--- |
 | pin | the number of pin that the button is connected to (can only be 2 or 3 on Arduino Uno) |
-| state | the boolean state (HIGH or LOW) that the button should be after debouncing |
+| state | the boolean state (HIGH or LOW) that the button should settle on |
 
 ## Example
 
@@ -44,7 +44,7 @@ void setup() {
 void loop() {
 	if (pressed) {
 		Serial.println("Button was pressed");
-		simple_debounce(2, LOW);
+		simple_button_wait(2, LOW);
 		pressed = false;
 	}
 }
